@@ -1,0 +1,1 @@
+remainder is 0 then giving increments to c and i
