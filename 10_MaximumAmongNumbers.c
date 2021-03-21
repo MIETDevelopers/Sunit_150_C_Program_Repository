@@ -20,7 +20,7 @@ int main()
         scanf("%f", &c);                //taking other elements values
         
         if(big < c)       //if first element is lesser than other element
-            big = c;    // update big to the larger value so that the max input value is reached
+            big = c;    // value of c is assigned to big thus gets assigned the largest value of them all
     }
 
     printf("\n\n\nThe largest of the %d numbers is  %f ", n, big);   //printing the largest number
