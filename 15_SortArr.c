@@ -1,30 +1,37 @@
-#include <stdio.h>
-int main()
-{
-    int n, i, j, temp;
-    int arr[64];      //an array of size 64
-    printf("Enter number of elements\n");
-    scanf("%d", &n);   //taking limit from user
- 
-    printf("Enter %d integers\n", n);
-    for (i = 0; i < n; i++)     //for loop till the limit is reached
-    {
-        scanf("%d", &arr[i]);   //will take input values till for loop reaches the limit value
-    }
-    for (i = 1 ; i <= n - 1; i++)     {
-	    j = i;
-            while ( j > 0 && arr[j-1] > arr[j])
-            {    
-                temp     = arr[j];
-                arr[j]   = arr[j-1];
-                arr[j-1] = temp;
-                j--;
-            }
-    }
-    printf("Sorted list in ascending order:\n");
-    for (i = 0; i <= n - 1; i++)
-    {
-        printf("%d\n", arr[i]);
-    }
-    return 0;
-}
+#include <stdio.h>    
+     
+int main()    
+{    
+    //Initialize array     
+    int arr[] = {5, 2, 8, 7, 1};     
+    int temp = 0;    
+        
+    //Calculate length of array arr    
+    int length = sizeof(arr)/sizeof(arr[0]);    
+        
+    //Displaying elements of original array    
+    printf("Elements of original array: \n");    
+    for (int i = 0; i < length; i++) {     
+        printf("%d ", arr[i]);     
+    }      
+        
+    //Sort the array in ascending order    
+    for (int i = 0; i < length; i++) {     
+        for (int j = i+1; j < length; j++) {     
+           if(arr[i] > arr[j]) {    
+               temp = arr[i];    
+               arr[i] = arr[j];    
+               arr[j] = temp;    
+           }     
+        }     
+    }    
+        
+    printf("\n");    
+        
+    //Displaying elements of array after sorting    
+    printf("Elements of array sorted in ascending order: \n");    
+    for (int i = 0; i < length; i++) {     
+        printf("%d ", arr[i]);    
+    }    
+    return 0;    
+}     
